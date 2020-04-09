@@ -102,6 +102,9 @@ module.exports = function getBaseConfig(opts) {
                     APP_ENV: JSON.stringify(process.env.APP_ENV)
                 }
             }),
+            // new webpack.DllReferencePlugin({
+            //     manifest: require('../public/library.json')
+            // }),
         ],
         stats: { children: false /* 取消子级信息 */ }
     }

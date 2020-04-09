@@ -27,6 +27,7 @@ staging/
 build/
 .vscode/
 .cache-loader/
+library/
 
 .npmrc
 .yarnrc
