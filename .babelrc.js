@@ -14,6 +14,7 @@ module.exports = {
                 style: true,
             }
         ],
+        "transform-class-properties",
         "@babel/plugin-syntax-dynamic-import",
         "react-hot-loader/babel"
     ]

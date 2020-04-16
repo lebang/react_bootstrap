@@ -23,7 +23,7 @@ const devConfig = {
         hot: true,
         inline: true,
         contentBase: false,
-        port: 8081,
+        // port: 8081,
         open: true
     },
     devtool: 'source-map',
