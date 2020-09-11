@@ -34,6 +34,13 @@ module.exports = {
     // Customize your rules
     "@typescript-eslint/consistent-type-assertions": 0,
     "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/no-invalid-this": "off"
+    "@typescript-eslint/no-invalid-this": "off",
+    "eqeqeq": [
+      'error',
+      'always',
+      {
+        null: 'ignore'
+      }
+    ]
   }
 }
