@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-interface IProps extends React.Props<any> {
+interface IProps {
+  id?:string
 }
 
 export default class extends Component<IProps, any> {
-    constructor(props: IProps) {
-        super(props);
-        this.state = {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {};
+    console.log("child a constructor");
+  }
 
-        }
-        console.log('child a constructor');
-    }
+  componentDidMount() {
+    console.log("child a did mount");
+  }
 
-    componentDidMount() {
-        console.log('child a did mount')
-    }
+  shouldComponentUpdate() {
+    console.log("child a shoud update");
+    return true;
+  }
 
-    shouldComponentUpdate() {
-        console.log('child a shoud update');
-        return true;
-    }
+  componentWillUnmount() {
+    console.log("a child un mount");
+  }
 
-    componentWillUnmount() {
-        console.log('a child un mount')
-    }
-
-    render() {
-        return <div>
-            a child
-        </div>;
-    }
+  render() {
+    return <div>a child</div>;
+  }
 }

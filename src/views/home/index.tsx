@@ -14,8 +14,7 @@ const Home: React.FC = () => {
     console.log("history:", history);
     console.log("state:", state);
     return (
-        <React.Fragment>
-            <NavBar
+        <NavBar
                 mode="light"
                 icon={<Icon type="left" />}
                 onLeftClick={() => console.log('onLeftClick')}
@@ -24,7 +23,6 @@ const Home: React.FC = () => {
                     <Icon key="1" type="ellipsis" />,
                 ]}
             >NavBar</NavBar>
-        </React.Fragment>
     );
 };
 export default Home;
