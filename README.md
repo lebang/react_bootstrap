@@ -1,2 +1,2 @@
 # react_bootstrap
-react bootstrap for pc and mobile
+react18 react-router6 vite webpack5
