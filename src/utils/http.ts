@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios'
+import axios, { AxiosInstance, AxiosResponse } from 'axios'
 
 const instance: AxiosInstance = axios.create({
   timeout: 30000,
@@ -33,17 +33,17 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-  (res: any) => checkStatus(res),
+  (res: AxiosResponse) => checkStatus(res),
   (error: { response: any }) => Promise.resolve(error.response)
 )
 
 instance.interceptors.response.use(
-  (res: any) => checkCode(res),
+  (res: AxiosResponse) => checkCode(res),
   (error: { response: any }) => Promise.resolve(error.response)
 )
 
 instance.interceptors.response.use(
-  (res: { data: any }) => (res && res.data ? res.data : res),
+  (res: AxiosResponse) => (res && res.data ? res.data : res),
   (error: { response: any }) => Promise.resolve(error.response)
 )
 

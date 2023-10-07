@@ -1,13 +1,28 @@
+/** @type {import('vite').UserConfig} */
+
 import { defineConfig, loadEnv, PluginOption } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import legacy from '@vitejs/plugin-legacy'
 import path from 'path'
+import vitePluginImp from 'vite-plugin-imp'
 
 const dirname = new URL('.', import.meta.url).pathname
 const resolve = (dir: string) => path.join(dirname, dir)
 
 const getPulgins = (command, appEnv) => {
-  const plugins: PluginOption[] = [react()]
+  const plugins: PluginOption[] = [
+    react(),
+    vitePluginImp({
+      libList: [
+        {
+          libName: 'antd',
+          style(name) {
+            return `antd/es/${name}/style`
+          },
+        },
+      ],
+    }),
+  ]
   if (appEnv === '"prod"' && command === 'build') {
     plugins.push(
       legacy({
@@ -38,11 +53,27 @@ export default defineConfig(({ command, mode }) => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
+          modules: true,
         },
       },
     },
     build: {
       target: 'es2015',
+      cssTarget: 'chrome61',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vender': [
+              'react',
+              'react-dom',
+              'react-router-dom',
+              'regenerator-runtime',
+            ],
+            'util-vender': ['lodash-es', 'axios'],
+            'lib-vender': ['antd', 'form-render'],
+          },
+        },
+      },
     },
   }
   return {
