@@ -45,10 +45,8 @@ export default defineConfig(({ command, mode }) => {
           modules: true,
         },
         scss: {
-          preprocessorOptions: {
-            // addditionalData: `@import "@/styles/variables.scss";`,
-            javascriptEnabled: true,
-          }
+          // addditionalData: `@import "@/styles/variables.scss";`,
+          javascriptEnabled: true,
         }
       },
     },
