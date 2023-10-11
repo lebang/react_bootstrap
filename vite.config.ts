@@ -4,7 +4,6 @@ import { defineConfig, loadEnv, PluginOption } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import legacy from '@vitejs/plugin-legacy'
 import path from 'path'
-import vitePluginImp from 'vite-plugin-imp'
 
 const dirname = new URL('.', import.meta.url).pathname
 const resolve = (dir: string) => path.join(dirname, dir)
@@ -12,16 +11,6 @@ const resolve = (dir: string) => path.join(dirname, dir)
 const getPulgins = (command, appEnv) => {
   const plugins: PluginOption[] = [
     react(),
-    vitePluginImp({
-      libList: [
-        {
-          libName: 'antd',
-          style(name) {
-            return `antd/es/${name}/style`
-          },
-        },
-      ],
-    }),
   ]
   if (appEnv === '"prod"' && command === 'build') {
     plugins.push(
@@ -70,7 +59,7 @@ export default defineConfig(({ command, mode }) => {
               'regenerator-runtime',
             ],
             'util-vender': ['lodash-es', 'axios'],
-            'lib-vender': ['antd', 'form-render'],
+            'lib-vender': ['tea-component', 'moment'],
           },
         },
       },

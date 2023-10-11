@@ -1,12 +1,16 @@
 import Router from './router'
-import { ConfigProvider } from 'antd'
-import zhCN from 'antd/es/locale/zh_CN'
-import 'antd/dist/reset.css'
+import { ConfigProvider } from 'tea-component'
+import moment from 'moment'
+// import zhCN from 'tea-component/lib/i18n/locale/zh-CN'
+import 'moment/dist/locale/zh-cn'
+import "tea-component/dist/tea.css"
 import './App.less'
 
+
+moment.locale('zh-cn')
 export default function App() {
   return (
-    <ConfigProvider locale={zhCN} prefixCls={'antd'}>
+    <ConfigProvider classPrefix={'tea'}>
       <Router />
     </ConfigProvider>
   )

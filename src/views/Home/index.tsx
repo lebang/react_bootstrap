@@ -1,6 +1,6 @@
 import http from '@/utils/http'
 import { useEffect } from 'react'
-import { Button } from 'antd'
+import { Button } from 'tea-component'
 import _ from 'lodash-es'
 import { useTranslation } from 'react-i18next'
 

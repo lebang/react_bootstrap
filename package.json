@@ -16,17 +16,17 @@
     ]
   },
   "dependencies": {
-    "antd": "^5.9.4",
     "axios": "^1.5.1",
-    "form-render": "^2.2.16",
     "i18next": "^23.5.1",
     "lodash-es": "^4.17.21",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0",
-    "regenerator-runtime": "^0.14.0"
+    "regenerator-runtime": "^0.14.0",
+    "tea-component": "^2.7.9"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.9",
