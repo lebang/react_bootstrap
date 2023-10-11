@@ -44,6 +44,12 @@ export default defineConfig(({ command, mode }) => {
           javascriptEnabled: true,
           modules: true,
         },
+        scss: {
+          preprocessorOptions: {
+            // addditionalData: `@import "@/styles/variables.scss";`,
+            javascriptEnabled: true,
+          }
+        }
       },
     },
     build: {

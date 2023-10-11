@@ -6,7 +6,6 @@ import 'moment/dist/locale/zh-cn'
 import "tea-component/dist/tea.css"
 import './App.less'
 
-
 moment.locale('zh-cn')
 export default function App() {
   return (
