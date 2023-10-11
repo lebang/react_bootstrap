@@ -6,6 +6,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:i18next/recommended",
         "plugin:react/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -15,7 +16,8 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
